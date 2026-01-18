@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scatch - India</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+</head>
+<body>
+    <% if (error && error.length > 0) { %>
+  <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50
+              rounded-md px-3 py-2
+              bg-red-200 text-red-700
+              font-[Gilroy-Regular] shadow">
+    <%= error[0] %>
+  </div>
+<% } %>
+<% if (success && success.length > 0) { %>
+                <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50
+                            rounded-md px-3 py-2
+                            bg-green-200 text-green-700
+                            font-[Gilroy-Regular] shadow">
+                    <%= success[0] %>
+                </div>
+            <% } %>
+    <div class="main h-screen w-full py-21 flex gap-30 justify-center font-[Gilroy-Regular]">
+       <div class="register w-1/3 h-[600px] flex items-center justify-center flex-col">
+            <h2 class="text-3xl font-[Gilroy-Medium]">Welcome to <large class="text-4xl text-blue-400 font-[Gilroy-Bold]">Scatch</large></h2>
+            <h3 class="font-[Gilroy-Regular] mb-3">Create your account</h3>
+            <form autocomplete="off" action="/user/register" method="post" class="flex flex-col gap-3 w-[400px]">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100" type="text" placeholder="Full Name" name="fullname">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100" type="email" placeholder="Email" name="email">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100" type="password" placeholder="Password" name="password">
+                <input class="px-3 py-2 rounded-md bg-blue-400 text-white w-[200px] cursor-pointer" type="submit" value="Create My Account">
+            </form>
+       </div>
+       <div class="login w-1/3 h-[600px] flex items-center justify-center flex-col">
+            <h2 class="text-3xl font-[Gilroy-Medium]">Welcome to <large class="text-4xl text-blue-400 font-[Gilroy-Bold]">Scatch</large></h2>
+            <h3 class="font-[Gilroy-Regular] mb-3">Login to your account</h3>
+            <form autocomplete="off" action="/user/login" method="post" class="flex flex-col gap-3 w-[400px]">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100" type="email" placeholder="Email" name="email">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100" type="password" placeholder="Password" name="password">
+                <input class="px-3 py-2 rounded-md bg-blue-400 text-white w-[100px] cursor-pointer" type="submit" value="Login">
+            </form>
+       </div>
+    </div>
+</body>
+</html>

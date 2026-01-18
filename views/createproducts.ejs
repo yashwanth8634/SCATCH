@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Product</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+</head>
+<body>
+    <div class="main flex h-screen">
+           <% if (error && error.length > 0) { %>
+                <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50
+                            rounded-md px-3 py-2
+                            bg-red-200 text-red-700
+                            font-[Gilroy-Regular] shadow">
+                    <%= error[0] %>
+                </div>
+            <% } %>
+           <% if (success && success.length > 0) { %>
+                <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50
+                            rounded-md px-3 py-2
+                            bg-green-200 text-green-700
+                            font-[Gilroy-Regular] shadow">
+                    <%= success[0] %>
+                </div>
+            <% } %>
+
+        <div class="sidebar w-1/3 px-4 py-3">
+            <h2 class="font-[gilroy-bold] text-3xl text-blue-400 mb-10"><a href="/">Scatch</a></h2>
+            <a class="block font-[Gilroy-Medium] text-xl mb-1 ml-7" href="/shop">Show All Products</a>
+            <a class="block font-[Gilroy-Medium] text-xl ml-7" href="/owner/create">Create New Product</a>
+            <a class="absolute bottom-8 font-[Gilroy-Medium] text-xl ml-7 px-5 py-2 bg-red-500 rounded-md text-white c" href="/owner/logout">Logout</a>
+        </div>
+        <div class="h-screen w-[10px] bg-gray-400"></div>
+        <div class="maincontent px-10 py-15">
+            <h3 class="text-3xl font-[Gilroy-Bold] mb-9">Create New Product</h3>
+            <h4 class="text-xl font-[Gilroy-Medium] mb-2">Product Details</h4>
+            <form action="/owner/create" method="post" enctype="multipart/form-data">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100 w-[400px] mb-2 mr-1" type="text" placeholder="Product Name" name="name" id="">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100 w-[400px] mb-2 mr-1" type="text" placeholder="Product Price" name="price" id="">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100 w-[400px] mb-2 mr-1" type="text" placeholder="Discount Price" name="discount" id="">
+                <label for="image" class="border-zinc-50 px-3 py-2 rounded-md bg-gray-100 w-[400px]">Product Image</label>
+                <input class="border-zinc-50 px-3 py-2 rounded-md w-[400px] mb-2 mr-1" type="file" name="image" id="image">
+                <h4 class="text-xl font-[Gilroy-Medium] mb-2">Panel Details</h4>
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100 w-[400px] mb-2 mr-1" type="text" placeholder="Background Color" name="bgcolor" id="">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100 w-[400px] mb-2 mr-1" type="text" placeholder="Panel Color" name="panelcolor" id="">
+                <input class="border-zinc-50 px-3 py-2 rounded-md outline-blue-300 bg-gray-100 w-[400px] mb-4 mr-1 block" type="text" placeholder="Text Color" name="textcolor" id="">
+                <input class="px-3 py-2 bg-blue-500 text-white rounded-md cursor-pointer" type="submit" value="Create New Product">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

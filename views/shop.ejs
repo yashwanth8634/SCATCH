@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+</head>
+<body>
+    <div class="main flex h-screen">
+           <% if (error && error.length > 0) { %>
+                <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50
+                            rounded-md px-3 py-2
+                            bg-red-200 text-red-700
+                            font-[Gilroy-Regular] shadow">
+                    <%= error[0] %>
+                </div>
+            <% } %>
+           <% if (success && success.length > 0) { %>
+                <div class="fixed top-3 left-1/2 -translate-x-1/2 z-50
+                            rounded-md px-3 py-2
+                            bg-green-200 text-green-700
+                            font-[Gilroy-Regular] shadow">
+                    <%= success[0] %>
+                </div>
+            <% } %>
+
+        <div class="sidebar w-1/4 px-4 py-3">
+            <h2 class="font-[gilroy-bold] text-3xl text-blue-400 mb-10"><a href="/">Scatch</a></h2>
+            <h4 class="block font-[Gilroy-Medium] text-xl mb-1 ml-7" href="/shop">Sort by:</h4
+            <a class="block font-[Gilroy-Medium] text-xl ml-7" href="/owner/create">New Collections</a>
+            <a class="block font-[Gilroy-Medium] text-xl ml-7" href="/owner/create">All Products</a>
+            <a class="block font-[Gilroy-Medium] text-xl ml-7" href="/owner/create">Discounted Products</a>
+            <h4 class="block font-[Gilroy-Medium] text-xl mb-1 ml-7" href="/shop">Filter by:</h4
+            <a class="absolute bottom-8 font-[Gilroy-Medium] text-xl ml-7 px-5 py-2 bg-red-500 rounded-md text-white c" href="/owner/logout">Logout</a>
+        </div>
+        <div class="h-screen w-[10px] bg-gray-400"></div>
+        <div class="maincontent px-10 py-15">
+        </div>
+    </div>
+</body>
+</html>
